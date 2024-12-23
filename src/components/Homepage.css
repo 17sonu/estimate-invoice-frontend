@@ -1,0 +1,149 @@
+.dashboard {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #c8ebf490, #c3e2cf);
+    min-height: 100vh;
+  }
+  
+  .dashboard-title {
+    text-align: center;
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+
+  .section {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .glass-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1500px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    transition: transform 0.2s ease;
+
+  }
+  
+  .glass-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.3);
+  }
+  
+  /* Arrow styling */
+  .arrow-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 20px 0 0 20px;
+    min-width: 180px;
+  }
+  
+  .arrow-box h2 {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .green {
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+  }
+
+
+
+  .purple {
+    background: linear-gradient(135deg, #ff6fd8, #845ec2);
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    margin-right: 200px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.2s;
+  }
+  
+  .glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .glass-card p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .glass-card h3 {
+    font-size: 1.8rem;
+    color: #222;
+    margin: 0;
+  }
+
+  .green1 {
+    background: linear-gradient(135deg, #43cea263, #185b9d73);
+  }
+
+  .green2 {
+    background: linear-gradient(135deg, #43cea231, #185b9d34);
+  }
+
+  .green3 {
+    background: linear-gradient(135deg, #8ee4c915, #276eb534);
+  }
+
+  .purple1 {
+    background: linear-gradient(135deg, #ff6fd976, #845ec287);
+  }
+
+  .purple2 {
+    background: linear-gradient(135deg, #ff6fd936, #845ec23e);
+  }
+
+  .purple3 {
+    background: linear-gradient(135deg, #ff6fd936, #c25ec20b);
+  }
+
+
+  .chart-title {
+    
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .glass-box2 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1500px;
+    max-height: 300px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    transition: transform 0.2s ease;
+
+  }
+  
+  .glass-box2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.3);
+  }
