@@ -39,7 +39,7 @@ const App = () => {
 
     useEffect(() => {
         setLoading(true);
-        const timer = setTimeout(() => setLoading(false), 500); // Simulated delay
+        const timer = setTimeout(() => setLoading(false), 200); // Simulated delay
         return () => clearTimeout(timer);
     }, [location]);
 
