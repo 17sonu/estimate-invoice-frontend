@@ -5,6 +5,8 @@ function InvoiceList() {
     const [sales, setSales] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [uploading, setUploading] = useState(false);
+
 
     useEffect(() => {
         const fetchSales = async () => {
@@ -20,6 +22,23 @@ function InvoiceList() {
 
         fetchSales();
     }, []);
+
+    const handleFileUpload = async (invoiceId, file) => {
+        setUploading(true);
+        const formData = new FormData();
+        formData.append("file", file);
+
+        try {
+            await axios.post(`https://estimate-invoice-backend.vercel.app/api/invoices/${invoiceId}/upload`, formData, {
+                headers: { "Content-Type": "multipart/form-data" },
+            });
+            alert("File uploaded successfully!");
+        } catch (err) {
+            alert("Error connecting to database!");
+        } finally {
+            setUploading(false);
+        }
+    };
 
     if (loading) {
         return <div className="loading">Loading...</div>;
@@ -75,6 +94,38 @@ function InvoiceList() {
                                             />
                                         </svg>
                                     </button>
+                                    <label className="flex items-center justify-center bg-gradient-to-r from-pink-500 to-blue-500 text-white py-2 px-3 rounded-lg hover:from-pink-600 hover:to-blue-600 shadow-md cursor-pointer w-28 h-10">
+                                        <input
+                                            type="file"
+                                            accept="application/pdf"
+                                            className="hidden"
+                                            onChange={(e) => handleFileUpload(sale.id, e.target.files[0])}
+                                        />
+                                        {uploading ? (
+                                            <svg
+                                                className="animate-spin h-5 w-5 text-white"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <circle
+                                                    className="opacity-25"
+                                                    cx="12"
+                                                    cy="12"
+                                                    r="10"
+                                                    stroke="currentColor"
+                                                    strokeWidth="4"
+                                                ></circle>
+                                                <path
+                                                    className="opacity-75"
+                                                    fill="currentColor"
+                                                    d="M4 12a8 8 0 018-8V0C6.48 0 2 4.48 2 10h2zm2 5.29a7.956 7.956 0 01-1.713-2.58l-1.864.777C4.6 15.745 6.235 17.03 8 17.71V15.29z"
+                                                ></path>
+                                            </svg>
+                                        ) : (
+                                            <span className="text-sm">Upload PDFs</span>
+                                        )}
+                                    </label>
                                 </td>
                             </tr>
                         ))}
